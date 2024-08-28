@@ -17,3 +17,9 @@ def read_fasta(fastaFile):
             else:
                 seqs[header] += line
     return seqs
+
+def get_seq_length(seqs):
+    seq_length = {}
+    for header, seq in seqs.items():
+        seq_length[header] = len(seq)
+    return seq_length
