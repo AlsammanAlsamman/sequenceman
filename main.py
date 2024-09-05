@@ -4,14 +4,15 @@ from seqclass.sequence import Sequence
 fastaFile="exampledata/seqmultiline.fasta"
 
 myseq = Sequence(fastaFile)
-print(myseq.get_seqs())
-print(myseq.get_seq_length())
+
+# print(myseq.get_seqs())
+# print(myseq.get_seq_length())
+# print(myseq.get_gc_content())
+myseq.get_seq_info()
+print(myseq.seq_length)
 
 
 # print(myseq.get_seq_length())
-
-
-
 
 
 # myseqs = read_fasta(fastaFile)

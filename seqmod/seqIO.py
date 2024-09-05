@@ -15,7 +15,7 @@ def read_fasta(fastaFile):
                 header=header.split()[0]
                 seqs[header] = ""
             else:
-                seqs[header] += line
+                seqs[header] += line.upper()
     return seqs
 
 def get_seq_length(seqs):
@@ -23,3 +23,15 @@ def get_seq_length(seqs):
     for header, seq in seqs.items():
         seq_length[header] = len(seq)
     return seq_length
+
+def get_seq_gc_content(seqs):
+    gc_content = {}
+    for header, seq in seqs.items():
+        gc_content[header] = (seq.count("G") + seq.count("C"))/len(seq)
+    return gc_content
+
+def get_seq_at_content(seqs):
+    at_content = {}
+    for header, seq in seqs.items():
+        at_content[header] = (seq.count("A") + seq.count("T"))/len(seq)
+    return at_content
