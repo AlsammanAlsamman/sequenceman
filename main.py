@@ -19,4 +19,4 @@ from seqclass.DNA import DNA
 
 # %%
 mydna = DNA("exampledata/seqsingleline.fasta")
-mydna.translate()
+print(mydna.translate())

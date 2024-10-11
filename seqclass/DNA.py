@@ -13,6 +13,7 @@ class DNA(Sequence):
 
     def dna_translate(seq):
         trans_dict = GenomicConst.TripleCodonTable
+        aa = ""
         for i in range(0, len(seq), 3):
             codon = seq[i:i+3]
             if len(codon) == 3:
@@ -28,3 +29,4 @@ class DNA(Sequence):
             self.get_seqs()
         for header, seq in self.seqs.items():
             self.aa_seqs[header] = DNA.dna_translate(seq)
+        return self.aa_seqs
