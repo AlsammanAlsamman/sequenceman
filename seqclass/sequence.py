@@ -36,7 +36,6 @@ class Sequence:
         self.seqs = read_fasta(self.file)
         # check if DNA
         if check_nonDNA(self.seqs):
-            print("Error: non-DNA bases detected")
             del self.seqs
             return
         return self.seqs

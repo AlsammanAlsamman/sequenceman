@@ -1,23 +1,22 @@
-from seqclass.sequence import Sequence
-from seqmod.seqIO import read_fasta, get_seq_length
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     custom_cell_magics: kql
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.11.2
+#   kernelspec:
+#     display_name: Python 3
+#     language: python
+#     name: python3
+# ---
 
+# %%
+from seqclass.DNA import DNA
 
-fastaFile="exampledata/seqmultiline.fasta"
-
-myseq = Sequence(fastaFile)
-
-# myseq.get_seqs()
-# myseq.get_seq_length()
-# del myseq
-get_seq_length(fastaFile)
-# print(myseq.get_seq_length())
-# print(myseq.get_gc_content())
-
-# print(myseq.get_seq_length())
-
-# myseqs = read_fasta(fastaFile)
-# seqLenght= get_seq_length(myseqs)
-# # print(myseqs)
-# print(seqLenght)
-# # if __name__ == '__main__':
-# #     pass
+# %%
+mydna = DNA("exampledata/seqsingleline.fasta")
+mydna.translate()
